@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="common/common-header :: common-header"/>
+
+<body>
+
+<div th:replace="common/common-menu :: common-menu"/>
+
+<!-- ########## START: HEAD PANEL ########## -->
+<div class="br-header">
+    <div class="br-header-left">
+        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href="#"><i class="icon ion-navicon-round"></i></a></div>
+        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="#"><i class="icon ion-navicon-round"></i></a></div>
+        <div class="input-group hidden-xs-down wd-170 transition">
+            <input id="searchbox" type="text" class="form-control" placeholder="Search">
+            <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+          </span>
+        </div><!-- input-group -->
+    </div><!-- br-header-left -->
+    <div class="br-header-right">
+        <nav class="nav">
+            <div class="dropdown">
+                <a href="#" class="nav-link nav-link-profile" data-toggle="dropdown">
+                    <span class="logged-name hidden-md-down" th:text="${logggedInUser}"></span>
+                    <img src="../img/img1.jpg" class="wd-32 rounded-circle" alt="">
+                    <span class="square-10 bg-success"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-header wd-250">
+                    <div class="tx-center">
+                        <a href="#"><img src="../img/img1.jpg" class="wd-80 rounded-circle" alt=""></a>
+                        <h6 class="logged-fullname" th:text="${logggedInUser}"></h6>
+                        <p>youremail@domain.com</p>
+                    </div>
+                    <hr>
+                    <ul class="list-unstyled user-profile-nav">
+                        <li><a href="#"><i class="icon ion-ios-person"></i> Edit Profile</a></li>
+                        <li><a href="#"><i class="icon ion-ios-gear"></i> Settings</a></li>
+                        <li><a th:href="@{/logout}"><i class="icon ion-power"></i> Sign Out</a></li>
+                    </ul>
+                </div><!-- dropdown-menu -->
+            </div><!-- dropdown -->
+        </nav>
+    </div><!-- br-header-right -->
+</div><!-- br-header -->
+<!-- ########## END: HEAD PANEL ########## -->
+
+<!-- ########## START: RIGHT PANEL ########## -->
+<div class="br-sideright">
+    <ul class="nav nav-tabs sidebar-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" role="tab" href="#contacts"><i class="icon ion-ios-contact-outline tx-24"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" role="tab" href="#attachments"><i class="icon ion-ios-folder-outline tx-22"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" role="tab" href="#calendar"><i class="icon ion-ios-calendar-outline tx-24"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" role="tab" href="#settings"><i class="icon ion-ios-gear-outline tx-24"></i></a>
+        </li>
+    </ul><!-- sidebar-tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane pos-absolute a-0 mg-t-60 overflow-y-auto active" id="contacts" role="tabpanel">
+            <label class="sidebar-label pd-x-25 mg-t-25">Online Contacts</label>
+            <div class="contact-list pd-x-10">
+                <a href="#" class="contact-list-link new">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img2.jpg" alt="">
+                            <div class="contact-status-indicator bg-success"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Marilyn Tarter</p>
+                            <span>Clemson, CA</span>
+                        </div>
+                        <span class="tx-info tx-12"><span class="square-8 bg-info rounded-circle"></span> 1 new</span>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img3.jpg" alt="">
+                            <div class="contact-status-indicator bg-success"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p class="mg-b-0 ">Belinda Connor</p>
+                            <span>Fort Kent, ME</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link new">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img4.jpg" alt="">
+                            <div class="contact-status-indicator bg-success"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Britanny Cevallos</p>
+                            <span>Shiboygan Falls, WI</span>
+                        </div>
+                        <span class="tx-info tx-12"><span class="square-8 bg-info rounded-circle"></span> 3 new</span>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link new">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img5.jpg" alt="">
+                            <div class="contact-status-indicator bg-success"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Brandon Lawrence</p>
+                            <span>Snohomish, WA</span>
+                        </div>
+                        <span class="tx-info tx-12"><span class="square-8 bg-info rounded-circle"></span> 1 new</span>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img6.jpg" alt="">
+                            <div class="contact-status-indicator bg-success"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Andrew Wiggins</p>
+                            <span>Springfield, MA</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img7.jpg" alt="">
+                            <div class="contact-status-indicator bg-success"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Theodore Gristen</p>
+                            <span>Nashville, TN</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img8.jpg" alt="">
+                            <div class="contact-status-indicator bg-success"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Deborah Miner</p>
+                            <span>North Shore, CA</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+            </div><!-- contact-list -->
+
+
+            <label class="sidebar-label pd-x-25 mg-t-25">Offline Contacts</label>
+            <div class="contact-list pd-x-10">
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img2.jpg" alt="">
+                            <div class="contact-status-indicator bg-gray-500"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Marilyn Tarter</p>
+                            <span>Clemson, CA</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img3.jpg" alt="">
+                            <div class="contact-status-indicator bg-gray-500"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Belinda Connor</p>
+                            <span>Fort Kent, ME</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img4.jpg" alt="">
+                            <div class="contact-status-indicator bg-gray-500"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Britanny Cevallos</p>
+                            <span>Shiboygan Falls, WI</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img5.jpg" alt="">
+                            <div class="contact-status-indicator bg-gray-500"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Brandon Lawrence</p>
+                            <span>Snohomish, WA</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img6.jpg" alt="">
+                            <div class="contact-status-indicator bg-gray-500"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Andrew Wiggins</p>
+                            <span>Springfield, MA</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img7.jpg" alt="">
+                            <div class="contact-status-indicator bg-gray-500"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Theodore Gristen</p>
+                            <span>Nashville, TN</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+                <a href="#" class="contact-list-link">
+                    <div class="d-flex">
+                        <div class="pos-relative">
+                            <img src="../img/img8.jpg" alt="">
+                            <div class="contact-status-indicator bg-gray-500"></div>
+                        </div>
+                        <div class="contact-person">
+                            <p>Deborah Miner</p>
+                            <span>North Shore, CA</span>
+                        </div>
+                    </div><!-- d-flex -->
+                </a><!-- contact-list-link -->
+            </div><!-- contact-list -->
+
+        </div><!-- #contacts -->
+
+
+        <div class="tab-pane pos-absolute a-0 mg-t-60 overflow-y-auto" id="attachments" role="tabpanel">
+            <label class="sidebar-label pd-x-25 mg-t-25">Recent Attachments</label>
+            <div class="media-file-list">
+                <div class="media">
+                    <div class="pd-10 bg-gray-500 bg-mojito wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-image-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">IMG_43445</p>
+                        <p class="mg-b-0 tx-12 op-5">JPG Image</p>
+                        <p class="mg-b-0 tx-12 op-5">1.2mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-purple wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-video-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">VID_6543</p>
+                        <p class="mg-b-0 tx-12 op-5">MP4 Video</p>
+                        <p class="mg-b-0 tx-12 op-5">24.8mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-reef wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-word-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">Tax_Form</p>
+                        <p class="mg-b-0 tx-12 op-5">Word Document</p>
+                        <p class="mg-b-0 tx-12 op-5">5.5mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-firewatch wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-pdf-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">Getting_Started</p>
+                        <p class="mg-b-0 tx-12 op-5">PDF Document</p>
+                        <p class="mg-b-0 tx-12 op-5">12.7mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-firewatch wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-pdf-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">Introduction</p>
+                        <p class="mg-b-0 tx-12 op-5">PDF Document</p>
+                        <p class="mg-b-0 tx-12 op-5">7.7mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-mojito wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-image-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">IMG_43420</p>
+                        <p class="mg-b-0 tx-12 op-5">JPG Image</p>
+                        <p class="mg-b-0 tx-12 op-5">2.2mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-mojito wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-image-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">IMG_43447</p>
+                        <p class="mg-b-0 tx-12 op-5">JPG Image</p>
+                        <p class="mg-b-0 tx-12 op-5">3.2mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-purple wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-video-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">VID_6545</p>
+                        <p class="mg-b-0 tx-12 op-5">AVI Video</p>
+                        <p class="mg-b-0 tx-12 op-5">14.8mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+                <div class="media mg-t-20">
+                    <div class="pd-10 bg-gray-500 bg-reef wd-50 ht-60 tx-center d-flex align-items-center justify-content-center">
+                        <i class="fa fa-file-word-o tx-28 tx-white"></i>
+                    </div>
+                    <div class="media-body">
+                        <p class="mg-b-0 tx-13">Secret_Document</p>
+                        <p class="mg-b-0 tx-12 op-5">Word Document</p>
+                        <p class="mg-b-0 tx-12 op-5">4.5mb</p>
+                    </div><!-- media-body -->
+                    <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                </div><!-- media -->
+            </div><!-- media-list -->
+        </div><!-- #history -->
+        <div class="tab-pane pos-absolute a-0 mg-t-60 overflow-y-auto" id="calendar" role="tabpanel">
+            <label class="sidebar-label pd-x-25 mg-t-25">Time &amp; Date</label>
+            <div class="pd-x-25">
+                <h2 id="brTime" class="br-time"></h2>
+                <h6 id="brDate" class="br-date"></h6>
+            </div>
+
+            <label class="sidebar-label pd-x-25 mg-t-25">Events Calendar</label>
+            <div class="datepicker sidebar-datepicker"></div>
+
+
+            <label class="sidebar-label pd-x-25 mg-t-25">Event Today</label>
+            <div class="pd-x-25">
+                <div class="list-group sidebar-event-list mg-b-20">
+                    <div class="list-group-item">
+                        <div>
+                            <h6>Roven's 32th Birthday</h6>
+                            <p>2:30PM</p>
+                        </div>
+                        <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                    </div><!-- list-group-item -->
+                    <div class="list-group-item">
+                        <div>
+                            <h6>Regular Workout Schedule</h6>
+                            <p>7:30PM</p>
+                        </div>
+                        <a href="#" class="more"><i class="icon ion-android-more-vertical tx-18"></i></a>
+                    </div><!-- list-group-item -->
+                </div><!-- list-group -->
+
+                <a href="#" class="btn btn-block btn-outline-secondary tx-uppercase tx-12 tx-spacing-2">+ Add Event</a>
+                <br>
+            </div>
+        </div>
+    </div><!-- tab-content -->
+</div><!-- br-sideright -->
+<!-- ########## END: RIGHT PANEL ########## --->
+
+<div class="br-mainpanel">
+    <div class="br-pageheader">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+            <a class="breadcrumb-item" href="index-2.html">Bracket</a>
+            <a class="breadcrumb-item" href="#">Forms</a>
+            <span class="breadcrumb-item active">Form Validation</span>
+        </nav>
+    </div><!-- br-pageheader -->
+    <div class="br-pagetitle">
+        <i class="icon ion-ios-gear-outline"></i>
+        <div>
+            <h4>Create User</h4>
+            <p class="mg-b-0">Create a user </p>
+        </div>
+    </div><!-- d-flex -->
+
+    <div class="br-pagebody">
+        <div class="br-section-wrapper">
+            <h6 class="tx-inverse tx-uppercase tx-bold tx-14 mg-t-80 mg-b-10">Hoverable Rows</h6>
+            <p class="br-section-text">To enable a hover state on table rows.</p>
+
+            <div class="bd bd-gray-300 rounded table-responsive">
+                <table class="table table-hover mg-b-0">
+                    <thead>
+                    <tr>
+                        <th>S.N</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user,iterator : ${users}">
+                        <td th:text="${iterator.index+1}"></td>
+                        <td th:text="${user.username}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td>
+                            <a type="button" class="btn btn-primary" th:onclick="'javascript:getUserById(\'' + ${user.id} +'\');'">Edit</a>
+                            <button type="button" class="btn btn-danger">Disable</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div><!-- bd -->
+
+            <!-- MODAL GRID -->
+            <div id="modaldemo6" class="modal fade">
+                <div class="modal-dialog modal-lg" role="document" id="myModal">
+                    <div class="modal-content bd-0 bg-transparent rounded overflow-hidden">
+                        <div class="modal-body pd-0">
+                            <div class="row no-gutters">
+                                <div class="col-lg-3 bg-primary">
+                                    <div class="pd-40">
+                                        <!--<h4 class="tx-white mg-b-20"><span>[</span> bracket + <span>]</span></h4>
+                                        <p class="tx-white op-7 mg-b-60">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                                        <p class="tx-white tx-13">
+                                            <span class="tx-uppercase tx-medium d-block mg-b-15">Our Address:</span>
+                                            <span class="op-7">Ayala Center, Cebu Business Park, Cebu City, Cebu, Philippines 6000</span></p>-->
+                                    </div>
+                                </div><!-- col-6 -->
+                                <div class="col-lg-9 bg-white">
+                                    <div class="pd-30">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <div class="br-section-wrapper form-row">
+                                            <h6 class="br-section-label">Update User Details</h6>
+                                            <p class="br-section-text">Update User details from already loaded User data.</p>
+
+                                            <form th:action="@{/updateUserDetails}" method="post" data-parsley-validate>
+                                                <div class="wd-300">
+                                                    <div class="d-md-flex mg-b-30">
+                                                        <div class="form-group mg-b-0">
+                                                            <label for="email">Email</label>
+                                                            <input type="email" id="email" name="email" class="form-control pd-y-12 wd-200" placeholder="Enter your email">
+                                                        </div><!-- form-group -->
+                                                        <div class="form-group mg-b-0 mg-md-l-20 mg-t-20 mg-md-t-0">
+                                                            <label for="first-name">First Name</label>
+                                                            <input type="text" id="first-name" name="firstName" class="form-control pd-y-12 wd-200" placeholder="Enter your First Name">
+                                                        </div><!-- form-group -->
+                                                    </div><!-- d-flex -->
+                                                    <div class="d-md-flex mg-b-30">
+                                                        <div class="form-group mg-b-0">
+                                                            <label for="middle-name">Middle Name</label>
+                                                            <input type="text" id="middle-name" name="middleName" class="form-control pd-y-12 wd-200" placeholder="Enter your Middle Name">
+                                                        </div><!-- form-group -->
+                                                        <div class="form-group mg-b-0 mg-md-l-20 mg-t-20 mg-md-t-0">
+                                                            <label for="last-name">Last Name</label>
+                                                            <input type="text" id="last-name" name="lastName" class="form-control pd-y-12 wd-200" placeholder="Enter your Last Name">
+                                                        </div><!-- form-group -->
+                                                    </div>
+                                                    <div class="d-md-flex mg-b-30">
+                                                        <div class="form-group mg-b-0">
+                                                            <label for="user-name">Username</label>
+                                                            <input type="text" id="user-name" name="username" class="form-control pd-y-12 wd-200" placeholder="Enter your User Name">
+                                                            <input type="hidden" id="id" name="id" class="form-control pd-y-12 wd-200" >
+                                                        </div><!-- form-group -->
+
+                                                    </div>
+                                                    <button type="submit" class="btn btn-info tx-11 pd-y-12 tx-uppercase tx-spacing-2 wd-400">Update</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        </div>
+                                    </div><!-- pd-20 -->
+                                </div><!-- col-6 -->
+                            </div><!-- row -->
+
+                        </div><!-- modal-body -->
+                    </div><!-- modal-content -->
+                </div><!-- modal-dialog -->
+            </div><!-- modal -->
+        </div><!-- br-section-wrapper -->
+    </div><!-- br-pagebody -->
+    <footer class="br-footer">
+        <div class="footer-left">
+            <div class="mg-b-2">Copyright &copy; 2018. Info Developers. All Rights Reserved.</div>
+        </div>
+    </footer>
+</div><!-- br-mainpanel -->
+<!-- ########## END: MAIN PANEL ########## -->
+
+<script>
+
+    function getUserById(id) {
+        console.log(id);
+        $.ajax({
+            url:"/getUserByUserId?id="+id,
+            success:function (response) {
+                $('#email').val(response.email);
+                $('#first-name').val(response.firstName);
+                $('#middle-name').val(response.middleName);
+                $('#last-name').val(response.lastName);
+                $('#user-name').val(response.username);
+                $('#id').val(response.id);
+
+                $("#modaldemo6").modal("show");
+                console.log(response);
+
+            }
+        });
+    }
+</script>
+<div th:replace="common/bottom-scripts::bottom-scripts"/>
+</body>
+</html>
